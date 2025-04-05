@@ -1,0 +1,166 @@
+/* Style général */
+body {
+    background-color: #2d2d4e;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Bouton de démarrage */
+.btn-start {
+    border-radius: 50px;
+    width: 20%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.btn-start:hover {
+    background-color: #0069d9;
+}
+
+/* Card et Quiz Box */
+.quiz-box,
+.score-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+}
+
+/* Active Quiz Box */
+.quiz-box.active,
+.score-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.card-header {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.question-text {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Options */
+.option-list .option {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.option-list .option:hover {
+    background-color: #007bff;
+    transform: scale(1.05);
+}
+
+.option-list .option.correct {
+    background-color: #28a745;
+    color: white;
+}
+
+.option-list .option.incorrect {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Timer */
+.time {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.time .second {
+    background-color: #ff6f61;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+/* Time Line */
+.time-line {
+    background-color: #dc3545;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Score Box */
+.score-box .score-text {
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.score-box .icon {
+    font-size: 60px;
+    color: #ffc107;
+}
+
+.score-box .buttons .btn {
+    width: 45%;
+    margin: 10px;
+}
+
+/* Mobile Responsiveness */
+@media(max-width: 600px) {
+    .quiz-box,
+    .score-box {
+        width: 90%;
+    }
+
+    .card-header {
+        font-size: 18px;
+    }
+
+    .question-text {
+        font-size: 20px;
+    }
+
+    .option-list .option {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .score-box .score-text {
+        font-size: 26px;
+    }
+
+    .score-box .icon {
+        font-size: 50px;
+    }
+
+    .time .second {
+        width: 30px;
+        height: 30px;
+    }
+
+    .time-line {
+        height: 3px;
+    }
+}
